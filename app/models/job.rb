@@ -1,6 +1,6 @@
 class Job < ActiveRecord::Base
 	belongs_to :boat
-	belongs_to :user, through: :boat
+	belongs_to :user #, through: :boat
 	validates :name, uniqueness: :true
 	validates :origin, inclusion: {in: ["Paris", "Tokyo", "London"]}
 	validates_numericality_of :cost, :greater_than => 1000.00

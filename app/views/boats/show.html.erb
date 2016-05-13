@@ -25,6 +25,10 @@
 
 		<%= f.label :cost %>
 		<%= f.text_field :cost %>
+
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :boat_id, value: @boat.id %>
+    <%= f.submit %>
 	<% end %>
 <% end %>
 
