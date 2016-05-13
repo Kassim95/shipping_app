@@ -3,9 +3,13 @@ class JobsController < ApplicationController
   end
 
   def new
+    @job = Job.new
   end
 
   def create
+    @job = Job.new(job_params)
+    @job.save
+    redirect_to jobs_path
   end
 
   def edit
@@ -18,5 +22,11 @@ class JobsController < ApplicationController
   end
 
   def show
+  end
+
+  private
+
+  def job_params
+    params.require(:job).permit(:name, :containers, :cargo, :origin, :cost, :destination)
   end
 end

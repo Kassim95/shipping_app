@@ -1,2 +1,8 @@
-<h1>Boats#edit</h1>
-<p>Find me in app/views/boats/edit.html.erb</p>
+<%= form_for @boat do |f| %>
+	Name: <%= f.text_field :name %><br>
+	Containers <%= f.text_field :containers %><br>
+	location: <%= f.text_field :location %><br>
+<% @me = current_user.id %>
+	<%= f.hidden_field :user_id, value: @me %>
+	<%= f.submit "Save changes" %>
+<%end%>

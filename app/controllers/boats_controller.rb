@@ -8,7 +8,7 @@ class BoatsController < ApplicationController
   end
 
   def new
-   @boat = Boat.new
+    @boat = Boat.new
   end
 
   def create
@@ -18,9 +18,14 @@ class BoatsController < ApplicationController
   end
 
   def edit
+    @boat = Boat.find(params[:id])
   end
 
   def update
+    @boat = Boat.find(params[:id])
+    @boat.update(boats_params)
+    @boat.save
+    redirect_to boats_path
   end
 
   def destroy

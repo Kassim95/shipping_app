@@ -3,5 +3,7 @@
 <h1>Conainers: <%= @boat.containers %> </h1> 
 <h1>Location <%= @boat.location %> </h1> 
 <br>
-
-<%= link_to "Edit", edit_boat_path%> | <%= link_to "Delete the boat", destroy_path, method: :delete %>
+<%= link_to "go back", boats_path%> 
+<br>
+<br>
+<%= link_to "Edit", edit_boat_path%> | <%= link_to "Delete the boat", boat_path(@boat), method: :delete %>
