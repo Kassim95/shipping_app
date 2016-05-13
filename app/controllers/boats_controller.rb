@@ -26,6 +26,7 @@ class BoatsController < ApplicationController
 
   def show
     @boat = Boat.find(params[:id])
+    @job = Job.new
   end
   private
   def boats_params

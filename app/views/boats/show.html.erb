@@ -1,2 +1,40 @@
-<h1>Boats#show</h1>
-<p>Find me in app/views/boats/show.html.erb</p>
+<h1> Name: <%= @boat.name %> </h1> 
+<br>
+<h1>Containers: <%= @boat.containers %> </h1> 
+<h1>Location <%= @boat.location %> </h1> 
+<br>
+
+<%= link_to "Edit", edit_boat_path%> | <%= link_to "Delete the boat", destroy_path, method: :delete %>
+
+<% if current_user %>
+	<%= form_for Job.new do |f| %>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+
+		<%= f.label :containers, "# of Containers Required" %>
+		<%= f.text_field :containers %>
+
+		<%= f.label :origin %>
+		<%= f.text_field :origin %>
+
+		<%= f.label :cargo %>
+		<%= f.text_area :cargo %>
+
+		<%= f.label :destination %>
+		<%= f.text_field :destination %>
+
+		<%= f.label :cost %>
+		<%= f.text_field :cost %>
+	<% end %>
+<% end %>
+
+<% if @boat.jobs %>
+	<% @jobs.reverse.each do |job| %>
+		<%= job.name %>
+		# of Containers Required: <%= job.containers %>
+		Origin: <%= job.origin %>
+		Cargo: <%= job.cargo %>
+		Destination: <%= job.destination %>
+		Cost: <%= job.cost %>
+	<% end %>
+<% end %>
