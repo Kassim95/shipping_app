@@ -4,7 +4,6 @@ class BoatsController < ApplicationController
 
     @me = current_user.id
     @boat = Boat.where(user_id: @me)
-
   end
 
   def new
