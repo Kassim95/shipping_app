@@ -10,3 +10,28 @@
 <%= link_to "Edit", edit_boat_path%> | <%= link_to "Delete the boat", boat_path(@boat), method: :delete %>
 
 
+<%= form_for Job.new do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.label :containers, "# of Containers Required" %>
+	<%= f.text_field :containers %>
+
+	<%= f.label :origin %>
+	<%= f.text_field :origin %>
+
+	<%= f.label :cargo %>
+	<%= f.text_area :cargo %>
+
+	<%= f.label :destination %>
+	<%= f.text_field :destination %>
+
+	<%= f.label :cost %>
+	<%= f.text_field :cost %>
+
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :boat_id, value: @boat.id %>
+  <%= f.submit %>
+<% end %>
+
+
