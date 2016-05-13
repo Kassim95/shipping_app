@@ -1,5 +1,6 @@
 <h1> Name: <%= @boat.name %> </h1> 
 <br>
+
 <h1>Conainers: <%= @boat.containers %> </h1> 
 <h1>Location <%= @boat.location %> </h1> 
 <br>
@@ -7,3 +8,5 @@
 <br>
 <br>
 <%= link_to "Edit", edit_boat_path%> | <%= link_to "Delete the boat", boat_path(@boat), method: :delete %>
+
+
