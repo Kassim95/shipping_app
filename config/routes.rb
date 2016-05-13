@@ -1,40 +1,11 @@
 Rails.application.routes.draw do
-  get 'jobs/index'
 
-  get 'jobs/new'
+  resources :boats
+  resources :jobs
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
-  get 'jobs/create'
 
-  get 'jobs/edit'
 
-  get 'jobs/update'
-
-  get 'jobs/destroy'
-
-  get 'jobs/show'
-
-  get 'boats/index'
-
-  get 'boats/new'
-
-  get 'boats/create'
-
-  get 'boats/edit'
-
-  get 'boats/update'
-
-  get 'boats/destroy'
-
-  get 'boats/show'
-
-  get 'home/index'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
-
-  devise_for :users
-  root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
