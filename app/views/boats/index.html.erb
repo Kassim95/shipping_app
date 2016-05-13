@@ -7,7 +7,6 @@
 	<%= f.text_field :location %><br>
 	<%= f.submit "Add boat" %>
 <%end%>
-<%= current_user.id %>
 
 <% @boat.each do |boat| %>
 	<%= link_to boat.name,  boat_path(boat) %>

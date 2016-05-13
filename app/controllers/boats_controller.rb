@@ -1,7 +1,7 @@
 class BoatsController < ApplicationController
   def index
     # session.clear
-    @me = current_user.id
+    # @me = current_user.id
     @boat = Boat.where(user_id: :@me)
   end
 
