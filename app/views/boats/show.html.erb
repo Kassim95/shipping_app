@@ -1,2 +1,7 @@
-<h1>Boats#show</h1>
-<p>Find me in app/views/boats/show.html.erb</p>
+<h1> Name: <%= @boat.name %> </h1> 
+<br>
+<h1>Conainers: <%= @boat.containers %> </h1> 
+<h1>Location <%= @boat.location %> </h1> 
+<br>
+
+<%= link_to "Edit", edit_boat_path%> | <%= link_to "Delete the boat", destroy_path, method: :delete %>
