@@ -5,9 +5,11 @@
 	<%= f.text_field :containers %><br>
 	<%= f.label :location %><br>
 	<%= f.text_field :location %><br>
+<% @me = current_user.id %>
+	<%= f.hidden_field :user_id, value: @me %>
 	<%= f.submit "Add boat" %>
 <%end%>
-<%= current_user.id %>
+
 
 <% @boat.each do |boat| %>
 	<%= link_to boat.name,  boat_path(boat) %>

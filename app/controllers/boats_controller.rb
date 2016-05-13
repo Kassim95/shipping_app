@@ -2,7 +2,7 @@ class BoatsController < ApplicationController
   def index
     # session.clear
     @me = current_user.id
-    @boat = Boat.where(user_id: :@me)
+    @boat = Boat.where(user_id: @me)
   end
 
   def new
@@ -28,6 +28,6 @@ class BoatsController < ApplicationController
   end
   private
   def boats_params
-    params.require(:boat).permit(:name, :containers, :location)
+    params.require(:boat).permit(:user_id, :name, :containers, :location)
   end
 end
