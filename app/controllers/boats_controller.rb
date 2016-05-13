@@ -1,8 +1,8 @@
 class BoatsController < ApplicationController
   def index
     # session.clear
-    # @me = current_user.id
-    @boat = Boat.where(user_id: :@me)
+    @me = current_user.id
+    @boat = Boat.where(user_id: @me)
   end
 
   def new
@@ -12,7 +12,7 @@ class BoatsController < ApplicationController
   def create
     @boat = Boat.new(boats_params)
     @boat.save
-      redirect_to boats_path
+    redirect_to boats_path
   end
 
   def edit
@@ -25,6 +25,7 @@ class BoatsController < ApplicationController
   end
 
   def show
+    @boat = Boat.find(params[:id])
   end
   private
   def boats_params
