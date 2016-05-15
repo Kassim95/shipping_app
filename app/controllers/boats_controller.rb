@@ -20,7 +20,7 @@ class BoatsController < ApplicationController
     @boat = Boat.find(params[:id])
   end
 
-  def update
+  def update 
     @boat = Boat.find(params[:id])
     @boat.update(boats_params)
     @boat.save
@@ -40,6 +40,6 @@ class BoatsController < ApplicationController
 
   private
   def boats_params
-    params.require(:boat).permit(:user_id, :name, :containers, :location)
+    params.require(:boat).permit(:avatar, :user_id, :name, :containers, :location)
   end
 end

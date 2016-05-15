@@ -1,37 +1,44 @@
-<h1> Name: <%= @boat.name %> </h1> 
+<div class="job-list"></div>
+<div class="left">	
+	<div class="boat-show">
+		<%= image_tag @boat.avatar.url(:medium) %>
+		<h1> Name: <%= @boat.name %> </h1> 
+		<br>
+		<h1>Containers: <%= @boat.containers %> </h1> 
+		<h1>Location <%= @boat.location %> </h1> 
+		<br>
+		<%= link_to "go back", boats_path%> 
+		<br>
+		<br>
+		<%= link_to "Edit", edit_boat_path%> | <%= link_to "Delete the boat", boat_path(@boat), method: :delete %>
+	</div>
+</div>
 <br>
+<div class="job-create">
+	<%= form_for Job.new do |f| %>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %><br>
 
-<h1>Conainers: <%= @boat.containers %> </h1> 
-<h1>Location <%= @boat.location %> </h1> 
-<br>
-<%= link_to "go back", boats_path%> 
-<br>
-<br>
-<%= link_to "Edit", edit_boat_path%> | <%= link_to "Delete the boat", boat_path(@boat), method: :delete %>
+		<%= f.label :containers, "# of Containers Required" %><br>
+		<%= f.text_field :containers %><br>
 
+		<%= f.label :origin %><br>
+		<%= f.text_field :origin %><br>
 
-<%= form_for Job.new do |f| %>
-	<%= f.label :name %>
-	<%= f.text_field :name %>
+		<%= f.label :cargo %><br>
+		<%= f.text_area :cargo %><br>
 
-	<%= f.label :containers, "# of Containers Required" %>
-	<%= f.text_field :containers %>
+		<%= f.label :destination %><br>
+		<%= f.text_field :destination %><br>
 
-	<%= f.label :origin %>
-	<%= f.text_field :origin %>
+		<%= f.label :cost %><br>
+		<%= f.text_field :cost %><br>
 
-	<%= f.label :cargo %>
-	<%= f.text_area :cargo %>
+	  <%= f.hidden_field :user_id, value: current_user.id %><br>
+	  <%= f.hidden_field :boat_id, value: @boat.id %><br>
+	  <%= f.submit %><br>
+	<% end %>
+</div>
 
-	<%= f.label :destination %>
-	<%= f.text_field :destination %>
-
-	<%= f.label :cost %>
-	<%= f.text_field :cost %>
-
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.hidden_field :boat_id, value: @boat.id %>
-  <%= f.submit %>
-<% end %>
 
 

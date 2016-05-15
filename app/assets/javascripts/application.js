@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).ready(function(){
+	$('.login-form').hide();
+	$('.login-form').fadeIn(4000);
+	//qTip
+	// $('form').on('ajax:complete', function(e){
+	// 	$(e.currentTarget).parent().parent().parent().parent().show();
+	// });
+
+
+})

@@ -1,8 +1,10 @@
-<%= form_for @boat do |f| %>
-	Name: <%= f.text_field :name %><br>
-	Containers <%= f.text_field :containers %><br>
-	location: <%= f.text_field :location %><br>
-<% @me = current_user.id %>
-	<%= f.hidden_field :user_id, value: @me %>
-	<%= f.submit "Save changes" %>
-<%end%>
+<div class="boat-edit">
+	<%= form_for @boat do |f| %>
+		Name: <%= f.text_field :name %><br>
+		Containers <%= f.text_field :containers %><br>
+		location: <%= f.text_field :location %><br>
+	<% @me = current_user.id %>
+		<%= f.hidden_field :user_id, value: @me %>
+		<%= f.submit "Save changes" %>
+	<%end%>
+</div>

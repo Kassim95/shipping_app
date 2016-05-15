@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="nav-bar">
+	<%= link_to "Home",  boats_path %> <%= link_to "Boats list",  boats_path %> <%= link_to "Following",  boats_path %> <span><%= link_to "Logout",  boats_path %></span>
+</div>
 
 <%= yield %>
 
