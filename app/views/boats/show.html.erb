@@ -16,12 +16,14 @@
 		<%= link_to "go back", boats_path%> 
 		<br>
 		<br>
-		<%= link_to "Edit", edit_boat_path%> | <%= link_to "Delete the boat", boat_path(@boat), method: :delete %>
-		<br>
+		<% if current_user.id == @boat.user_id %>
+			<%= link_to "Edit", edit_boat_path%> | <%= link_to "Delete the boat", boat_path(@boat), method: :delete %>
+			<br>
+		<% end %>
 		<% if !@follow %>
-		  <%= button_to 'Follow', {controller: "followers", action: "create", boat_id: params[:id]}, data: { confirm: 'are you sure you want to follow this boat' }, remote: true %>
+		  <%= button_to 'Follow', {controller: "followers", action: "create", boat_id: params[:id]}, data: { confirm: 'are you sure you want to follow this boat' } %>
 		<% else %>
-		  <%= button_to 'Unfollow', follower_path(@follow), method: :delete, remote: true %>
+		  <%= button_to 'Unfollow', follower_path(@follow), method: :delete %>
 	<% end %>
 	</div>
 </div>
