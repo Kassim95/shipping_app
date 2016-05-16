@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   def index
-    
+    @boat = Boat.all
   end
 
   def new
@@ -9,7 +9,7 @@ class JobsController < ApplicationController
   def create
     @job = Job.new(job_params)
     @job.save
-    redirect_to boat_path
+    redirect_to boats_path
   end
 
   def edit
@@ -19,13 +19,13 @@ class JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
     @job.update(job_params)
-    redirect_to boat_path
+    redirect_to boats_path
   end
 
   def destroy
     @job = Job.find(params[:id])
     @job.destroy
-    redirect_to boat_path
+    redirect_to boats_path
   end
 
   def show

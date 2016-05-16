@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'followers/index'
+
+  get 'followers/destroy'
+
   resources :boats
   resources :jobs
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
 
-
+  resources :followers
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

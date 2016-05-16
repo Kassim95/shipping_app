@@ -1,4 +1,10 @@
-<div class="job-list"></div>
+	<% @jobs.reverse.each do |job| %>
+		<div class="job-list">
+			<%= link_to job.name,  job_path(job) %>
+			<br> 
+	</div>
+<% end %>
+</div>
 <div class="left">	
 	<div class="boat-show">
 		<%= image_tag @boat.avatar.url(:medium) %>
@@ -11,6 +17,12 @@
 		<br>
 		<br>
 		<%= link_to "Edit", edit_boat_path%> | <%= link_to "Delete the boat", boat_path(@boat), method: :delete %>
+		<br>
+		<% if !@follow %>
+		  <%= button_to 'Follow', {controller: "followers", action: "create", boat_id: params[:id]}, data: { confirm: 'are you sure you want to follow this boat' }, remote: true %>
+		<% else %>
+		  <%= button_to 'Unfollow', follower_path(@follow), method: :delete, remote: true %>
+	<% end %>
 	</div>
 </div>
 <br>

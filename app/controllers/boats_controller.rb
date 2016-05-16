@@ -36,6 +36,7 @@ class BoatsController < ApplicationController
   def show
     @boat = Boat.find(params[:id])
     @job = Job.new
+    @jobs = Job.where(boat_id: params[:id])
   end
 
   private

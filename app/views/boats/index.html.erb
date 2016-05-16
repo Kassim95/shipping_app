@@ -1,5 +1,5 @@
 <div class="boat-create">	
-	<%= form_for Boat.new, remote: true do |f| %>
+	<%= form_for Boat.new do |f| %>
 		<%= f.label :name %>
 		<%= f.text_field :name %>
 		<%= f.label :containers %>
@@ -13,7 +13,7 @@
 	<%end%>
 </div>
 
-<% @boat.each do |boat| %>
+<% @boat.reverse.each do |boat| %>
 	<div class="boat-list">
 	<%= link_to boat.name,  boat_path(boat) %>
 	<br> 

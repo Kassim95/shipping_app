@@ -1,0 +1,6 @@
+<% @follow.reverse.each do |follow| %>
+	<div class="boat-list">
+	<%= link_to follow.boat.name,  boat_path(follow.boat) %>
+	<br> 
+	</div>
+<% end %>

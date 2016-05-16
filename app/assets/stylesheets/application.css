@@ -74,11 +74,12 @@ input{
 	margin-top: 20px;
 	background: black;
 	opacity: 0.8;
+	text-align: center;
 }
 
 .boat-show{
 	border: solid;
-	height: 450px;
+	height: 750px;
 	width: 400px;
 	border-radius: 10px;
 	padding-left: 70px;

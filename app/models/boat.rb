@@ -1,6 +1,7 @@
 class Boat < ActiveRecord::Base
 	belongs_to :user
 	has_many :jobs
+	has_many :followers
 	validates :name, uniqueness: true
 	validates :location, inclusion: {in: ["NYC", "LA", "Miami"]} #, "Chicago", "Boston", "New Orleans", "Detroit", "Seattle"]
 

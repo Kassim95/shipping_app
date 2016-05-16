@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="nav-bar">
-	<%= link_to "Home",  boats_path %> <%= link_to "Boats list",  boats_path %> <%= link_to "Following",  boats_path %> <span><%= link_to "Logout",  boats_path %></span>
+	<%= link_to "Home",  boats_path %> <%= link_to "Boats list",  jobs_path %> <%= link_to "Following",  followers_path %> <span><%= link_to "Logout",  destroy_user_session_path, method: :delete %></span>
 </div>
 
 <%= yield %>

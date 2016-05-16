@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   has_many :boats
   has_many :jobs, through: :boats
+  has_many :followers
 end

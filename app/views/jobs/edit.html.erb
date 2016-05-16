@@ -1,2 +1,11 @@
-<h1>Jobs#edit</h1>
-<p>Find me in app/views/jobs/edit.html.erb</p>
+<div class="boat-edit">
+	<%= form_for @job do |f| %>
+		Name: <%= f.text_field :name %><br>
+		Containers <%= f.text_field :containers %><br>
+		Cargo: <%= f.text_field :cargo %><br>
+		Origin: <%= f.text_field :origin %><br>
+		Cost: <%= f.text_field :cost %><br>
+		Destination: <%= f.text_field :destination %><br>
+		<%= f.submit "Save changes" %>
+	<%end%>
+</div>

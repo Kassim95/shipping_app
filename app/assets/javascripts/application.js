@@ -17,6 +17,8 @@
 $(document).ready(function(){
 	$('.login-form').hide();
 	$('.login-form').fadeIn(4000);
+	$('.signup-form').hide();
+	$('.signup-form').fadeIn(4000);
 	//qTip
 	// $('form').on('ajax:complete', function(e){
 	// 	$(e.currentTarget).parent().parent().parent().parent().show();

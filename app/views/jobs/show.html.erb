@@ -1,2 +1,17 @@
-<h1>Jobs#show</h1>
-<p>Find me in app/views/jobs/show.html.erb</p>
+<div class="boat-show">
+		<h1> Name: <%= @job.name %> </h1> 
+		<br>
+		<h1>Containers: <%= @job.containers %> </h1> 
+		<h1>Cargo: <%= @job.cargo %> </h1> 
+		<br>
+		<h1>Origin: <%= @job.origin %> </h1> 
+		<br>
+		<h1>Cost: <%= @job.cost %> </h1> 
+		<br>
+		<h1>Destination: <%= @job.destination %> </h1> 
+		<%= link_to "go back", boats_path%> 
+		<br>
+		<br>
+		<%= link_to "Edit", edit_job_path%> | <%= link_to "Delete the boat", job_path(@job), method: :delete %>
+		<%=link_to "Follow", follow_path(boat_id: @boat.id), method: :post, remote: true %>
+</div>

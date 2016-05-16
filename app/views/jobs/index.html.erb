@@ -1,2 +1,6 @@
-<h1>Jobs#index</h1>
-<p>Find me in app/views/jobs/index.html.erb</p>
+<% @boat.each do |boat| %>
+	<div class="boat-list">
+	<%= link_to boat.name,  boat_path(boat) %>
+	<br> 
+	</div>
+<% end %>
