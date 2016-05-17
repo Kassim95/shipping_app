@@ -17,7 +17,8 @@ class FollowersController < ApplicationController
   end 
 
   def index
-  	@follow = Follower.all
+    @me = current_user
+  	@follow = Follower.where(user_id: @me)
   	@boat = Boat.all
   end
 
